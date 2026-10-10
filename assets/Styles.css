@@ -1,0 +1,257 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+        'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    background: #F2F5F7;
+}
+
+nav {
+    margin-top: 50px;
+    margin-left: 50px;
+    float: left;
+    width: 15%;
+    line-height: 20px;
+    position: fixed;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(0, 106, 255);
+    font-weight: bold;
+    display: block;
+    font-size: 25px;
+}
+
+nav a:hover {
+    color: rgb(176, 249, 86);
+    font-size: 15px;
+}
+
+#wrapper {
+    margin-top: 50px;
+    width: 60%;
+    margin-right: 50px;
+    margin-left: auto;
+}
+
+header img {
+    width: 100%;
+    height: auto;
+}
+
+header h1 {
+    text-align: right;
+    font-size: 25px;
+    margin-bottom: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header h2 {
+    margin-top: 0px;
+    margin-bottom: 30px;
+    text-align: right;
+    font-size: 20px;
+    color: rgb(83, 163, 255);
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+header h3 {
+    margin-top: 0px;
+    margin-bottom: 30px;
+    text-align: left;
+    font-size: 20px;
+    color: rgb(78, 187, 227);
+}
+
+section {
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+article h3 {
+    margin-bottom: 10px;
+    color: rgb(182, 140, 228);
+}
+
+/*Version 1
+.books {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    max-width: 100%;
+    height: auto;
+    gap: 16px;
+}
+*/
+
+/*Version 2
+. books{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    max-width: 100%;
+    gap:16px;
+}
+*/
+
+/* New way to display photos, the grid*/
+.books {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+/*We added object-fit so that all the photos be the same with diffrent windos opening*/
+.books figure {
+    margin: 0;
+}
+
+.books img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/*old way to do it 
+.books img {
+    display: block;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+*/
+
+article figure figcaption {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+footer {
+    margin-top: 20px;
+    min-height: 30px;
+    font-size: 10px;
+    font-weight: lighter;
+    text-align: right;
+    font-style: italic;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Tablet
+Up to 900px*/
+
+
+@media (max-width: 900px) {
+
+    #wrapper {
+        width: 70%;
+        margin-right: 30px;
+    }
+
+    nav {
+        margin-left: 30px;
+        width: 20%;
+    }
+
+    .books {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Mobile
+Up to 600px */
+
+@media (max-width: 600px) {
+
+    nav {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 0 40px 0;
+        padding: 10px 5px;
+
+        position: relative;
+        float: none;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+
+        line-height: 30px;
+
+        background: rgba(164, 244, 79, 0.637);
+        border-bottom: 4px solid rgb(115, 255, 0);
+
+        z-index: 1000;
+    }
+
+    nav a {
+        color: rgb(0, 106, 255);
+    }
+
+    nav a:hover {
+        color: rgb(255, 88, 188);
+    }
+
+    nav a:active {
+        background: rgb(255, 88, 188);
+    }
+
+
+    #wrapper {
+        width: 92%;
+        margin: 0 auto;
+        float: none;
+    }
+
+
+    header h1 {
+        text-align: right;
+        font-size: 18px;
+        margin-top: 40px;
+    }
+
+    header h2 {
+        text-align: right;
+        font-size: 18px;
+    }
+
+
+    .books {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+
+    footer {
+        margin-top: 40px;
+        font-size: 12px;
+    }
+}
+
+
+/* Very small phones
+Up to 400px */
+
+@media (max-width: 400px) {
+
+    nav {
+        padding: 8px 0;
+    }
+
+    #wrapper {
+        width: 94%;
+    }
+
+    .books {
+        gap: 12px;
+    }
+
+    article figure figcaption {
+        font-size: 11px;
+    }
+}
